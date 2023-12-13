@@ -65,3 +65,29 @@ To change the TPOT model training configuration:
 
 - Modify the TPOTClassifier initialization parameters in tpot_service.py.
 - Adjust any other relevant model training settings in this file.
+
+### Example output
+
+Below is an example of the response provided by the service:
+```
+{
+    "model_details": "Pipeline(steps=[('kneighborsclassifier', KNeighborsClassifier(n_neighbors=9, p=1, weights='distance'))])",
+    "score": {
+        "accuracy": 0.8858695652173914,
+        "confusion_matrix": [[66, 11], [10, 97]],
+        "f1_score": 0.8825353397172824,
+        "precision": 0.8832846003898636,
+        "recall": 0.8818424566088117
+    }
+}
+```
+
+#### Interpretation of the Response:
+
+- model_details: Provides the details of the trained machine learning pipeline. In this example, a K-Nearest Neighbors classifier was identified as the optimal model.
+- score: A collection of various performance metrics evaluated on the test dataset:
+1. accuracy: The proportion of correctly predicted instances.
+2. confusion_matrix: A matrix showing the counts of true negative, false positive, false negative, and true positive predictions.
+3. f1_score: The harmonic mean of precision and recall.
+4. precision: The ratio of correctly predicted positive observations to the total predicted positives.
+5. recall: The ratio of correctly predicted positive observations to all actual positives.
